@@ -46,6 +46,61 @@ We report **ROUGE‑1, ROUGE‑2, and ROUGE‑L** (F1 scores) on the test split.
 | ROUGE‑L | 0.2515 | 0.2602 | **+3.5%** |
 
 > **Note:** The 3B base model already exhibits strong medical knowledge, hence the improvements are more modest yet consistent across all metrics. In contrast, the 1.5B model shows larger relative gains because its base performance is lower, demonstrating that fine‑tuning is particularly beneficial for smaller models.
+# Qualitative Examples (from 1.5B model)
+
+### Example 1
+
+**Question**
+
+> What are the treatments for Pulmonary alveolar proteinosis acquired?
+
+**Observation**
+
+The fine-tuned model generated a clinically relevant treatment-oriented response that captured the main therapeutic concepts, although it differed from the reference wording.
+
+**ROUGE-1:** 0.2520
+
+---
+
+### Example 2
+
+**Question**
+
+> What is primary ciliary dyskinesia?
+
+**Observation**
+
+The model correctly described the disease as a respiratory disorder and identified key symptoms such as recurrent respiratory infections and breathing difficulties. Although some secondary details were omitted, the generated response remained medically relevant.
+
+**ROUGE-1:** 0.3968
+
+---
+
+### Example 3
+
+**Question**
+
+> What genetic changes are related to biotin-thiamine-responsive basal ganglia disease?
+
+**Observation**
+
+The model incorrectly generated a different gene name instead of **SLC19A3**, demonstrating a factual hallucination despite achieving a relatively high ROUGE score.
+
+**ROUGE-1:** 0.4353
+
+This example highlights that lexical overlap metrics alone cannot fully measure factual correctness in medical question answering.
+
+---
+
+# Error Analysis
+
+Although LoRA significantly improved ROUGE scores, qualitative analysis revealed several limitations:
+
+* Some responses paraphrased the reference answer, resulting in lower ROUGE despite being semantically correct.
+* Certain answers omitted secondary clinical details.
+* A small number of predictions hallucinated biomedical entities, such as incorrect gene names.
+
+These observations indicate that ROUGE should be complemented with semantic and factuality-based evaluation metrics for medical applications.
 
 ## How to Reproduce
 
