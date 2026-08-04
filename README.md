@@ -37,13 +37,13 @@ We report **ROUGE‑1, ROUGE‑2, and ROUGE‑L** (F1 scores) on the test split.
 | ROUGE‑2 | 0.0609 | 0.2350 | **+285.9%** |
 | ROUGE‑L | 0.1360 | 0.3001 | **+120.7%** |
 
-### Results: Qwen 2.5 3B
+### Qwen2.5‑3B
 
-| Metric | Base Model | Fine‑tuned | Improvement |
-| :--- | :--- | :--- | :--- |
-| ROUGE‑1 | 0.3472 | 0.3591 | **+3.4%** |
-| ROUGE‑2 | 0.1929 | 0.2025 | **+5.0%** |
-| ROUGE‑L | 0.2515 | 0.2602 | **+3.5%** |
+| Metric  | Base Model | Fine-Tuned | Improvement |
+| ------- | ---------: | ---------: | ----------: |
+| ROUGE-1 |     0.1904 | **0.3504** |  **+84.1%** |
+| ROUGE-2 |     0.0455 | **0.1982** | **+335.5%** |
+| ROUGE-L |     0.1160 | **0.2543** | **+119.3%** |
 
 > **Note:** The 3B base model already exhibits strong medical knowledge, hence the improvements are more modest yet consistent across all metrics. In contrast, the 1.5B model shows larger relative gains because its base performance is lower, demonstrating that fine‑tuning is particularly beneficial for smaller models.
 # Qualitative Examples (from 1.5B model)
