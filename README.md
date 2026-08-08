@@ -107,6 +107,11 @@ These observations indicate that ROUGE should be complemented with semantic and 
 1. Clone this repository.
 2. Load the base model and fine‑tuned adapter (provided in the release assets).
 3. Run evaluation on the MedQuad test set using the provided evaluation script.
+4. Downloade the LoRA adapter folder in zip file from kaggle and unzip it in local
+5. Download the base Qwen-2.5 1.5B model from huggingface and unzip it in local
+6. Merge the LoRA adapter with Qwen-2.5 1.5B model by running the merge_model.py script in terminal
+7. Teste local reliability / latency by running the benchmark.py script in terminal
+8. Create FastAPI inference
 
 ## Conclusion
 
