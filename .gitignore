@@ -1,0 +1,5 @@
+.env
+venv
+adapter
+qwen-finetuned
+__pycache__
